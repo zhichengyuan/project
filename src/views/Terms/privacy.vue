@@ -350,8 +350,11 @@
              </div>
             <div class="main-box">
                 <h2 class="title">{{i18n.$t('7 清关')}}</h2>
-                <p>
+                <!-- <p>
                  {{i18n.$t('清关代理服务请在线咨询')}}
+                </p> -->
+                <p>
+                 {{i18n.$t('将在俄罗斯通过Unitrade AO进行清关，但遵守在公告上的条件 http://sms.unitrade.su/')}}
                 </p>
              </div>
            
