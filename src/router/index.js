@@ -28,7 +28,47 @@ const routes = [
   {
     path: '/clearance',
     name: 'clearance',
-    component: () => import(/* webpackChunkName: "about" */ '../views/clearance/index.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/clearance/index.vue'),
+    redirect:'clearanceUpload',
+    children: [
+      {
+        path: '/clearanceUpload',
+        name: 'clearanceUpload',
+        component: () => import(/* webpackChunkName: "about" */ '../views/clearance/clearanceUpload.vue'),
+      },
+      {
+        path: '/generateExcel',
+        name: 'generateExcel',
+        component: () => import(/* webpackChunkName: "about" */ '../views/clearance/generateExcel.vue'),
+      },
+      {
+        path: '/queryList',
+        name: 'queryList',
+        component: () => import(/* webpackChunkName: "about" */ '../views/clearance/queryList.vue'),
+      },
+      {
+        path: '/checkList',
+        name: 'checkList',
+        component: () => import(/* webpackChunkName: "about" */ '../views/clearance/checkList.vue'),
+      },
+      {
+        path: '/generateChinaD',
+        name: 'generateChinaD',
+        component: () => import(/* webpackChunkName: "about" */ '../views/clearance/generateChinaD.vue'),
+      },
+      {
+        path: '/generateLogisticsfile',
+        name: 'generateLogisticsfile',
+        component: () => import(/* webpackChunkName: "about" */ '../views/clearance/generateLogisticsfile.vue'),
+      },
+      {
+        path: '/contrast',
+        name: 'contrast',
+        component: () => import(/* webpackChunkName: "about" */ '../views/clearance/contrast.vue'),
+      },
+      
+      
+    ]
   }
   
 ]
