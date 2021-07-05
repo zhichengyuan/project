@@ -1,7 +1,7 @@
 <template>
   <div class="home-menu">
       <div class="logo" @click="$router.push('/')">
-          <img src="../../../assets/img/logo.png" alt="">
+          <img src="../../../assets/img/logo.jpg" alt="">
       </div>
       <div class="menu">
           <!-- <span @click="$router.push('/logQuery')">{{i18n.$t('物流查询')}}</span> -->
