@@ -13,15 +13,16 @@ module.exports = {
     },
     devServer: {
         proxy: {
-            '/api': {     //这里最好有一个 /
-                target: 'https://unitrade.alta.ru',  // 后台接口域名
-                // ws: true,        //如果要代理 websockets，配置这个参数
-                secure: true,  // 如果是https接口，需要配置这个参数
-                changeOrigin: true,  //是否跨域
-                // pathRewrite:{
-                //     '^/rng':''
-                // }
-            },
+            // '/api': {     //这里最好有一个 /
+            //     // target: 'https://unitrade.alta.ru',  // 后台接口域名
+            //     target: 'http://192.168.70.188:7785',  // 后台接口域名
+            //     // ws: true,        //如果要代理 websockets，配置这个参数
+            //     secure: true,  // 如果是https接口，需要配置这个参数
+            //     changeOrigin: true,  //是否跨域
+            //     // pathRewrite:{
+            //     //     '^/rng':''
+            //     // }
+            // },
             '/express/plog/': {     //这里最好有一个 /
                 target: 'https://api.unitrade.su',  // 后台接口域名
                 // ws: true,        //如果要代理 websockets，配置这个参数
@@ -40,6 +41,13 @@ module.exports = {
             },
             '/express/events': {     //这里最好有一个 /
                 target: 'https://api.unitrade.su',  // 后台接口域名
+                // ws: true,        //如果要代理 websockets，配置这个参数
+                secure: true,  // 如果是https接口，需要配置这个参数
+                changeOrigin: true,  //是否跨域
+             
+            },
+            '/api': {     //这里最好有一个 /
+                target: 'https://trans.eytonex.com',  // 后台接口域名
                 // ws: true,        //如果要代理 websockets，配置这个参数
                 secure: true,  // 如果是https接口，需要配置这个参数
                 changeOrigin: true,  //是否跨域

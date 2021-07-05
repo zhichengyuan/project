@@ -1,5 +1,29 @@
 import request from './request1'
 
+  //比对
+export function contrast(form) {
+    console.log('dsdsds',form)
+    return request({
+         url: "/api/trans/checkexcel",//https://unitrade.alta.ru
+         method: "post",
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        },
+        data:form
+     })
+}
+  //获取包裹列表
+export function getListByTime(startDate,endDate) {
+    console.log('dsdsds')
+    return request({
+         url: "/api/trans/parcelState",//https://unitrade.alta.ru
+         method: "post",
+         data:{
+             "startDate":startDate,
+             "endDate":endDate
+         }
+     })
+}
   //获取包裹列表
 export function getList(startDate,endDate) {
     return request({

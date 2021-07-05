@@ -5,9 +5,9 @@ import { MessageBox, Message,ElMessage } from 'element-plus'
 
 // create an axios instance
 const service = axios.create({
-    baseURL: '', // url = base url + request url
+    baseURL: 'https://trans.eytonex.com', // url = base url + request url
     // withCredentials: true, // send cookies when cross-domain requests
-    timeout: 10000 // request timeout
+    timeout: 100000 // request timeout
 })
 
 // request interceptor
@@ -15,10 +15,10 @@ service.interceptors.request.use(
     config => {
         // do something before request is sent
         // str.indexOf("3") != -1
-        if(config.url.indexOf('/plog/') || config.url == '/express/events'){
-            console.log(localStorage.getItem("access_token"))
-            config.headers['Authorization'] = 'Bearer ' + localStorage.getItem("access_token")
-        }
+        // if(config.url.indexOf('/plog/') || config.url == '/express/events'){
+        //     console.log(localStorage.getItem("access_token"))
+        //     config.headers['Authorization'] = 'Bearer ' + localStorage.getItem("access_token")
+        // }
         // if (store.getters.token) {
         //     // let each request carry token
         //     // ['X-Token'] is a custom headers key
@@ -64,6 +64,9 @@ service.interceptors.response.use(
             }else {
                 return Promise.reject(new Error(res.data.error_message || 'Error'))
             }
+        }
+        if(res.data.code === 0) {
+            return res.data;
         }
         if (res.data.success !== 'true') {
             // console.log('error', res)
