@@ -1,5 +1,4 @@
 import axios from 'axios'
-import {  Message } from 'element-plus'
 export default function ajax(url, data = {}, type = "GET") {
   return new Promise((resolve, reject) => {
     let Promise;
